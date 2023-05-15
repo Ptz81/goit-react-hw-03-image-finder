@@ -2,10 +2,11 @@ import css from './ImageGallery.module.css'
 import PropTypes from 'prop-types'
 import { ImageGalleryItem } from './ImageGalleryItem';
 
-export const ImageGallery = ({ images, handleOpenModal }) => {
+
+export const ImageGallery = ({ apiData, handleOpenModal }) => {
   return (
     <ul className={css.ImageGallery}>
-  {images.map(({id, tag, webformatURL, largeImageURL}) => {
+  {apiData.map(({id, tag, webformatURL, largeImageURL}) => {
     return (
       <ImageGalleryItem
         key={id}
