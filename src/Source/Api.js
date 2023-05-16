@@ -15,6 +15,6 @@ export const fetchPhotos = async (query, page) => {
   const response = await axios.get(`?${searchParams}`);
     return response.data;
   } catch (error) {
-    console.log(`${error.name}: ${error.message}`);
+    alert(`${error.name}: ${error.message}`);
   }
 };

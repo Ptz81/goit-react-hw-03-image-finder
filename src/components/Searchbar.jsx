@@ -38,7 +38,7 @@ export class Searchbar extends Component {
           <button
             type="submit"
             className={css.button}>
-             <IconContext.Provider value={{ color: 'blue', size: '1.2 em' }}>
+             <IconContext.Provider value={{ color: 'blue', size: '15px' }}>
               <div>
                 <FaSearch />
               </div>
