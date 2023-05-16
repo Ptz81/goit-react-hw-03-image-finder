@@ -1,13 +1,13 @@
 import css from './ImageGallery.module.css'
 import PropTypes from 'prop-types'
 
-export const Button = ({ nameBtn, handleLoadMore }) => {
+export const Button = ({ handleLoadMore }) => {
   return (
           <button
             type="button"
             onClick={handleLoadMore}
             className={css.Button}
-          >{nameBtn}</button>
+          >Load more</button>
   );
 }
 Button.propTypes = {

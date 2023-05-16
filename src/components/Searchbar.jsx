@@ -9,11 +9,11 @@ export class Searchbar extends Component {
     query: '',
   }
 
-  handleInput(e) {
-      this.setState({ query: e.currentTarget.value });
+  handleInput = (e) => {
+      this.setState({ query: e.currentTarget.value.toLowerCase() });
   }
 
-  handleSubmit(e) {
+  handleSubmit=(e) => {
     e.preventDefault();
     if (this.state.query.trim() === '') {
       return Notiflix.Notify.failure(
@@ -49,8 +49,8 @@ export class Searchbar extends Component {
     <input
       className={css.input}
       type="text"
-      autocomplete="off"
-      autofocus
+      autoComplete="off"
+      autoFocus
       placeholder="Search images and photos"
       onChange={this.handleInput}
       value={this.state.query}

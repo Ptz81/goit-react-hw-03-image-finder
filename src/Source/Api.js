@@ -1,20 +1,16 @@
-import axios from 'axios';
+const key = '25186497-f0b65966427832fd654bcbd8e';
+const position = 'photo&orientation=horizontal';
 
-axios.defaults.baseURL = 'https://pixabay.com/api/';
-export const fetchPhotos = async (query, page) => {
-  try {
-    const searchParams = new URLSearchParams({
-      key: '12470042-156b4534868fdb2d637b9b4f4',
-      query: { query },
-      image_type: 'photo',
-      orientation: 'horizontal',
-      safesearch: 'true',
-      per_page: 12,
-      page,
-    });
-  const response = await axios.get(`?${searchParams}`);
-    return response.data;
-  } catch (error) {
-    alert(`${error.name}: ${error.message}`);
-  }
-};
+export function fetchImages(name, page) {
+  return fetch(
+    `https://pixabay.com/api/?q=${name}&page=${page}&key=${key}&image_type=${position}&per_page=12`
+  )
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+
+      return Promise.reject(new Error(`no image for ${name}`));
+    })
+    .then(response => response.hits);
+}
