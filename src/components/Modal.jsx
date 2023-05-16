@@ -29,12 +29,13 @@ export class Modal extends Component{
   }
 
   render() {
+
     return createPortal(
       <div
         className={css.overlay}
         onClick={this.handleBackdropClick}>
         <div className={css.modal}>
-          {this.props.children}
+         {this.props.children}
         </div>
       </div>,
       modalRoot
@@ -44,5 +45,5 @@ export class Modal extends Component{
 
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
-  children: PropTypes.node
+  src: PropTypes.string.isRequired,
 }

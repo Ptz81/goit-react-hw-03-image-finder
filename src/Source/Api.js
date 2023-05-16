@@ -1,9 +1,10 @@
 const key = '25186497-f0b65966427832fd654bcbd8e';
-const position = 'photo&orientation=horizontal';
+// const position = 'photo&orientation=horizontal';
 
 export function fetchImages(name, page) {
   return fetch(
-    `https://pixabay.com/api/?q=${name}&page=${page}&key=${key}&image_type=${position}&per_page=12`
+    `https://pixabay.com/api/?q=${name}&page=${page}&key=${key}&image_type=photo&orientation=horizontal&per_page=12`
+
   )
     .then(response => {
       if (response.ok) {

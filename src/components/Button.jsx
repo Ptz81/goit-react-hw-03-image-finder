@@ -6,11 +6,10 @@ export const Button = ({ handleLoadMore }) => {
           <button
             type="button"
             onClick={handleLoadMore}
-            className={css.Button}
+            className={css.button}
           >Load more</button>
   );
 }
 Button.propTypes = {
-nameBtn: PropTypes.string.isRequired,
 handleLoadMore: PropTypes.func.isRequired,
 }
