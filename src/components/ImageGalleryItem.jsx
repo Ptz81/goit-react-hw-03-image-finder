@@ -3,12 +3,12 @@ import css from './ImageGallery.module.css'
 
 export const ImageGalleryItem = (({tags, webformatURL, largeImageURL}) => {
   return (
-   <li className={css.ImageGalleryItem}>
+   <li className={css.imageGalleryItem}>
             <img
               src={webformatURL}
               alt={tags}
               data_img={largeImageURL}
-              className={css.ImageGalleryItem_image}
+              className={css.imageGalleryItem_image}
               />
       </li>
 )

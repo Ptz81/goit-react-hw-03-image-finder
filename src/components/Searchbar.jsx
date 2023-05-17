@@ -1,8 +1,7 @@
 import { Component } from "react";
 import css from './ImageGallery.module.css'
 import Notiflix from 'notiflix';
-import { IconContext } from "react-icons";
-import { FaSearch } from 'react-icons/fa';
+
 
 export class Searchbar extends Component {
   state = {
@@ -38,11 +37,7 @@ export class Searchbar extends Component {
           <button
             type="submit"
             className={css.button}>
-             <IconContext.Provider value={{ color: 'blue', size: '15px' }}>
-              <div>
-                <FaSearch />
-              </div>
-   </IconContext.Provider>
+
       <span className={css.button_label}>Search</span>
     </button>
 

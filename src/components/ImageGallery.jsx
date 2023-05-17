@@ -41,7 +41,7 @@ import { ImageGalleryItem } from './ImageGalleryItem';
 
 export const ImageGallery = ({ items, openModal }) => {
   return (
-    <ul className={css.ImageGallery}>
+    <ul className={css.imageGallery}>
       {items.map(({ id, tags, webformatURL, largeImageURL }) => (
         <ImageGalleryItem
           key={id}

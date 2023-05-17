@@ -4,26 +4,26 @@ import css from './ImageGallery.module.css';
 import PropTypes from 'prop-types';
 
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.querySelector('#modal_root');
 export class Modal extends Component{
   state = {};
 
   componentDidMount() {
-    document.addEventListener('keydown', this.handleKeyDown);
+    window.addEventListener('keydown', this.handleKeyDown);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeyDown);
+    window.removeEventListener('keydown', this.handleKeyDown);
   }
 
   handleKeyDown = (e) => {
-    if (e.code === 'escape') {
+    if (e.code === 'Escape') {
       this.props.onClose()
     }
   }
 
   handleBackdropClick = (e) => {
-    if (e.target === e.currentTarget) {
+    if (e.currentTarget === e.target) {
       this.props.onClose();
     }
   }
