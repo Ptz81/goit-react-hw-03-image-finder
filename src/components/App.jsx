@@ -71,9 +71,13 @@ export class App extends Component {
     this.setState((prevState) => ({ openModal: !prevState.openModal }));
   };
 
-handleOpenModal = (largeImageURL) => {
+
+  handleOpenModal = (e) => {
+     if (e.target.nodeName !== 'IMG') {
+      return;
+    }
   this.setState({
-    modalImg: largeImageURL,
+    modalImg: e.target.dataset.img,
   });
   this.toggleImage();
 };
@@ -85,11 +89,13 @@ handleOpenModal = (largeImageURL) => {
     return (
       <div className={css.app}>
         {openModal && (
-          <Modal src={modalImg} onClose={this.toggleImage} />
+          <Modal onClose={this.toggleImage}>
+              <img src={modalImg} alt="#" />
+          </Modal>
         )}
         <Searchbar onSubmit={this.handleFormSubmit} />
         {pictures.length >= 1 && (
-          <ImageGallery items={pictures} openModal={this.handleOpenModal} />
+          <ImageGallery items={pictures} handleOpenModal={this.handleOpenModal} />
         )}
         {button && (
           <Button handleLoadMore={this.handlePagination} />
