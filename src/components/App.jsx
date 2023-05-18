@@ -84,15 +84,15 @@ handleOpenModal = (largeImageURL) => {
 
     return (
       <div className={css.app}>
+        {openModal && (
+          <Modal src={modalImg} onClose={this.toggleImage} />
+        )}
         <Searchbar onSubmit={this.handleFormSubmit} />
         {pictures.length >= 1 && (
           <ImageGallery items={pictures} openModal={this.handleOpenModal} />
         )}
         {button && (
           <Button handleLoadMore={this.handlePagination} />
-        )}
-        {openModal && (
-          <Modal src={modalImg} onClose={this.toggleImage} />
         )}
         {loader && (
           <Loader className={css.loader} />
