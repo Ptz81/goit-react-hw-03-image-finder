@@ -16,6 +16,8 @@
   text-decoration: none;
   transition: all .3s;
   user-select: none;
+  width: 180px;
+  margin: auto;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
