@@ -1,4 +1,3 @@
-
 import css from '../ImageGallery.module.css'
 
 export const ImageGalleryItem = (({tags, webformatURL, largeImageURL}) => {
@@ -7,12 +6,11 @@ export const ImageGalleryItem = (({tags, webformatURL, largeImageURL}) => {
             <img
               src={webformatURL}
               alt={tags}
-              data_img={largeImageURL}
+              data-img={largeImageURL}
               className={css.imageGalleryItem_image}
               />
       </li>
 )
-
     }
     )
 

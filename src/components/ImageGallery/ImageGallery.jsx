@@ -5,14 +5,13 @@ import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
 
 export const ImageGallery = ({ items, openModal }) => {
   return (
-    <ul className={css.imageGallery}>
+    <ul className={css.imageGallery} onClick={openModal}>
       {items.map(({ id, tags, webformatURL, largeImageURL }) => (
         <ImageGalleryItem
           key={id}
           webformatURL={webformatURL}
           alt={tags}
           largeImageURL={largeImageURL}
-          onClick={() => openModal(largeImageURL)}
         />
       ))}
     </ul>
