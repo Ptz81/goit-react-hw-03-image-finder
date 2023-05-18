@@ -1,5 +1,5 @@
 
-import css from './ImageGallery.module.css'
+import css from '../ImageGallery.module.css'
 
 export const ImageGalleryItem = (({tags, webformatURL, largeImageURL}) => {
   return (

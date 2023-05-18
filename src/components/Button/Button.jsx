@@ -1,4 +1,4 @@
-import css from './ImageGallery.module.css'
+import css from './Button.module.css'
 import PropTypes from 'prop-types'
 
 export const Button = ({ handleLoadMore }) => {

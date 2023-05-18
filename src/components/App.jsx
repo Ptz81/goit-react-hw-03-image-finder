@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import Notiflix from 'notiflix';
-import { Searchbar } from "./Searchbar";
+import { Searchbar } from "./SearchBar/Searchbar";
 import { fetchImages } from "Source/Api";
-import Loader from "./Loader";
-import { Button } from "./Button";
-import { ImageGallery } from "./ImageGallery";
-import { Modal } from "./Modal";
+import Loader from "./Loader/Loader";
+import { Button } from "./Button/Button";
+import { ImageGallery } from "./ImageGallery/ImageGallery";
+import { Modal } from "./Modal/Modal";
 import css from './ImageGallery.module.css';
 
+function scroll() {
+  window.scrollTo({
+    top: document.documentElement.scrollHeight,
+    behavior: 'smooth',
+  });
+}
 export class App extends Component {
   state = {
     query: '',
@@ -41,6 +47,7 @@ export class App extends Component {
         if (hits.length === 0) {
           Notiflix.Notify.failure(`No images for ${this.state.query}`);
         }
+        scroll();
       })
       .catch((error) => console.log(error))
       .finally(() => {

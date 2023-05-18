@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { createPortal } from 'react-dom';
-import css from './ImageGallery.module.css';
+import css from './Modal.module.css';
 import PropTypes from 'prop-types';
 
 

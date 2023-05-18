@@ -1,5 +1,5 @@
 import { Component } from "react";
-import css from './ImageGallery.module.css'
+import css from './SearchBar.module.css'
 import Notiflix from 'notiflix';
 
 
@@ -24,7 +24,7 @@ export class Searchbar extends Component {
   };
 
   reset = () => {
-    this.setState({ query: ''});
+    this.setState({ query:''});
   };
 
   render() {
@@ -32,17 +32,17 @@ export class Searchbar extends Component {
       <header
         className={css.searchbar} >
         <form
-          className={css.form}
+          className={css.searchForm}
           onSubmit={this.handleSubmit}>
           <button
             type="submit"
-            className={css.button}>
+            className={css.searchForm_button}>
 
-      <span className={css.button_label}>Search</span>
+      <span className={css.searchForm_button_label}>Search</span>
     </button>
 
     <input
-      className={css.input}
+      className={css.searchForm_input}
       type="text"
       autoComplete="off"
       autoFocus
